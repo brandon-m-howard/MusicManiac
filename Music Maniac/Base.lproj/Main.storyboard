@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" initialViewController="D3K-eK-Iif">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Cassius Garrod.otf">
+            <string>CassiusGarrod</string>
+            <string>CassiusGarrod</string>
+            <string>CassiusGarrod</string>
+            <string>CassiusGarrod</string>
+            <string>CassiusGarrod</string>
+            <string>CassiusGarrod</string>
+        </mutableArray>
+    </customFonts>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="JgS-gw-imy">
+            <objects>
+                <viewController id="D3K-eK-Iif" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Q1P-N6-0WV"/>
+                        <viewControllerLayoutGuide type="bottom" id="ime-Tm-3Me"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wfV-hy-hbY">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AlpacaLand" translatesAutoresizingMaskIntoConstraints="NO" id="Nzn-hX-v9G">
+                                <rect key="frame" x="-24" y="-80" width="1944" height="1080"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wsn-ie-vqr">
+                                <rect key="frame" x="713" y="497" width="494" height="86"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="494" id="UQ1-gv-UiP"/>
+                                    <constraint firstAttribute="height" constant="86" id="jVQ-oG-mcE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="CassiusGarrod" family="Cassius Garrod" pointSize="50"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="Play"/>
+                                <connections>
+                                    <segue destination="499-42-d0g" kind="presentation" id="XP7-Pi-81r"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BgF-hf-48L">
+                                <rect key="frame" x="713" y="607" width="494" height="93"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="93" id="ZaW-xk-ubh"/>
+                                    <constraint firstAttribute="width" constant="494" id="vDY-fg-X6K"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="CassiusGarrod" family="Cassius Garrod" pointSize="50"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="High Score"/>
+                                <connections>
+                                    <segue destination="eOQ-tI-qnn" kind="presentation" id="yeP-2y-GkS"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LVv-Sq-e2s">
+                                <rect key="frame" x="652" y="176" width="616" height="313"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="616" id="SoB-PR-Ebh"/>
+                                    <constraint firstAttribute="height" constant="313" id="cCF-TE-fJ7"/>
+                                </constraints>
+                                <string key="text">Music
+Maniac</string>
+                                <fontDescription key="fontDescription" name="CassiusGarrod" family="Cassius Garrod" pointSize="150"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Alpaca" translatesAutoresizingMaskIntoConstraints="NO" id="yh4-zT-s6p">
+                                <rect key="frame" x="0.0" y="0.0" width="644" height="1080"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H8L-4m-809">
+                                <rect key="frame" x="713" y="724" width="494" height="93"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="494" id="Emc-Ik-NM7"/>
+                                    <constraint firstAttribute="height" constant="93" id="gKF-Yp-Y6D"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="CassiusGarrod" family="Cassius Garrod" pointSize="50"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="How to Play"/>
+                                <connections>
+                                    <segue destination="zOw-te-wNy" kind="presentation" id="J64-1f-Lel"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="wsn-ie-vqr" firstAttribute="centerY" secondItem="wfV-hy-hbY" secondAttribute="centerY" id="2gb-sL-OQC"/>
+                            <constraint firstItem="LVv-Sq-e2s" firstAttribute="leading" secondItem="yh4-zT-s6p" secondAttribute="trailing" constant="8" id="3Tb-Cp-QBd"/>
+                            <constraint firstItem="ime-Tm-3Me" firstAttribute="top" secondItem="Nzn-hX-v9G" secondAttribute="bottom" constant="80" id="46z-Dq-PbI"/>
+                            <constraint firstItem="BgF-hf-48L" firstAttribute="centerX" secondItem="wfV-hy-hbY" secondAttribute="centerX" id="91X-1D-slR"/>
+                            <constraint firstItem="wsn-ie-vqr" firstAttribute="centerX" secondItem="wfV-hy-hbY" secondAttribute="centerX" id="9aw-Aj-nrX"/>
+                            <constraint firstItem="Nzn-hX-v9G" firstAttribute="width" secondItem="wfV-hy-hbY" secondAttribute="width" constant="24" id="BCG-gK-WSo"/>
+                            <constraint firstItem="yh4-zT-s6p" firstAttribute="top" secondItem="Q1P-N6-0WV" secondAttribute="bottom" id="CLE-jh-kca"/>
+                            <constraint firstItem="Nzn-hX-v9G" firstAttribute="height" secondItem="wfV-hy-hbY" secondAttribute="height" id="DKF-iy-wCL"/>
+                            <constraint firstItem="H8L-4m-809" firstAttribute="top" secondItem="BgF-hf-48L" secondAttribute="bottom" constant="24" id="IT4-Az-qnh"/>
+                            <constraint firstItem="wsn-ie-vqr" firstAttribute="top" secondItem="LVv-Sq-e2s" secondAttribute="bottom" constant="8" id="LNp-JH-wrl"/>
+                            <constraint firstItem="LVv-Sq-e2s" firstAttribute="centerX" secondItem="wfV-hy-hbY" secondAttribute="centerX" id="MNM-Yp-PF9"/>
+                            <constraint firstItem="BgF-hf-48L" firstAttribute="top" secondItem="wsn-ie-vqr" secondAttribute="bottom" constant="24" id="Q8Q-Xy-xjr"/>
+                            <constraint firstItem="yh4-zT-s6p" firstAttribute="leading" secondItem="wfV-hy-hbY" secondAttribute="leadingMargin" constant="-20" id="RFh-zY-iBy"/>
+                            <constraint firstItem="ime-Tm-3Me" firstAttribute="top" secondItem="yh4-zT-s6p" secondAttribute="bottom" id="l01-XG-HHE"/>
+                            <constraint firstItem="H8L-4m-809" firstAttribute="centerX" secondItem="wfV-hy-hbY" secondAttribute="centerX" id="oQn-Yb-v2X"/>
+                            <constraint firstItem="Nzn-hX-v9G" firstAttribute="leading" secondItem="wfV-hy-hbY" secondAttribute="leadingMargin" constant="-44" id="xTu-0e-KWb"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dFw-Vm-EKT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1888" y="559"/>
+        </scene>
+        <!--How To Play View Controller-->
+        <scene sceneID="8AQ-hK-rF0">
+            <objects>
+                <viewController id="zOw-te-wNy" customClass="HowToPlayViewController" customModule="Music_Maniac" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QWt-dX-es8"/>
+                        <viewControllerLayoutGuide type="bottom" id="heb-60-Bep"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GhU-0p-kLX">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hzy-VH-fXP">
+                                <rect key="frame" x="20" y="20" width="1880" height="1040"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <string key="text">Learn how to play piano with Music Maniac!
+
+Open the controller on your iPhone and connect to your AppleTV. Press the correct key on the controller to help the alpaca jump over the obstacles!</string>
+                                <fontDescription key="fontDescription" name="CassiusGarrod" family="Cassius Garrod" pointSize="90"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="boI-pE-kGV">
+                                <rect key="frame" x="864" y="950" width="192" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="8ay-LT-y7v"/>
+                                    <constraint firstAttribute="width" constant="192" id="uI3-bU-0jY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="CassiusGarrod" family="Cassius Garrod" pointSize="38"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="Okay"/>
+                                <connections>
+                                    <action selector="okayButton:" destination="zOw-te-wNy" eventType="primaryActionTriggered" id="LY0-Hs-QXf"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="boI-pE-kGV" firstAttribute="centerX" secondItem="GhU-0p-kLX" secondAttribute="centerX" id="604-Y0-XEk"/>
+                            <constraint firstItem="hzy-VH-fXP" firstAttribute="leading" secondItem="GhU-0p-kLX" secondAttribute="leadingMargin" id="GJS-BR-dKh"/>
+                            <constraint firstItem="hzy-VH-fXP" firstAttribute="top" secondItem="QWt-dX-es8" secondAttribute="bottom" constant="20" id="brC-qA-xOb"/>
+                            <constraint firstItem="hzy-VH-fXP" firstAttribute="trailing" secondItem="GhU-0p-kLX" secondAttribute="trailingMargin" id="rl6-LK-Nf9"/>
+                            <constraint firstItem="heb-60-Bep" firstAttribute="top" secondItem="boI-pE-kGV" secondAttribute="bottom" constant="50" id="sJD-dx-bnI"/>
+                            <constraint firstItem="heb-60-Bep" firstAttribute="top" secondItem="hzy-VH-fXP" secondAttribute="bottom" constant="20" id="ypY-pW-0yQ"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SKz-1k-gUt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137" y="1781"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="fIj-tG-HM9">
+            <objects>
+                <viewController id="eOQ-tI-qnn" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rMR-Af-Vb1"/>
+                        <viewControllerLayoutGuide type="bottom" id="y49-pQ-kLt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mAz-pb-JuP">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kbV-Aq-vDt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1888" y="1781"/>
+        </scene>
+        <!--Game View Controller-->
+        <scene sceneID="dEh-eV-dlg">
+            <objects>
+                <viewController id="499-42-d0g" customClass="GameViewController" customModule="Music_Maniac" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="TiC-Vw-u93"/>
+                        <viewControllerLayoutGuide type="bottom" id="3TX-uQ-fmp"/>
+                    </layoutGuides>
+                    <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="weF-Pa-zaM" customClass="SKView">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dFW-Nd-Df7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137" y="559"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Alpaca" width="635" height="1001"/>
+        <image name="AlpacaLand" width="1024" height="681"/>
+    </resources>
+</document>

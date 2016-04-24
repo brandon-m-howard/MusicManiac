@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  PianoStudio
+//  Music Maniac
 //
-//  Created by Brandon Howard on 4/18/16.
+//  Created by Brandon Howard on 4/24/16.
 //  Copyright © 2016 Ticklin' The Ivories. All rights reserved.
 //
 

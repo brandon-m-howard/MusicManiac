@@ -1,0 +1,345 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CABEA5E71CCD455700009080 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABEA5E61CCD455700009080 /* AppDelegate.swift */; };
+		CABEA5E91CCD455700009080 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = CABEA5E81CCD455700009080 /* GameScene.sks */; };
+		CABEA5EB1CCD455700009080 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABEA5EA1CCD455700009080 /* GameScene.swift */; };
+		CABEA5ED1CCD455700009080 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABEA5EC1CCD455700009080 /* GameViewController.swift */; };
+		CABEA5EF1CCD455700009080 /* Game.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CABEA5EE1CCD455700009080 /* Game.xcassets */; };
+		CABEA5F21CCD455700009080 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CABEA5F01CCD455700009080 /* Main.storyboard */; };
+		CABEA5F41CCD455700009080 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CABEA5F31CCD455700009080 /* Assets.xcassets */; };
+		CABEA5FC1CCD4BCD00009080 /* Cassius Garrod.otf in Resources */ = {isa = PBXBuildFile; fileRef = CABEA5FB1CCD4BCD00009080 /* Cassius Garrod.otf */; };
+		CABEA5FE1CCD51B900009080 /* HowToPlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABEA5FD1CCD51B900009080 /* HowToPlayViewController.swift */; };
+		CABEA6071CCD5C2000009080 /* A.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CABEA5FF1CCD5C2000009080 /* A.mp3 */; };
+		CABEA6081CCD5C2000009080 /* B.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CABEA6001CCD5C2000009080 /* B.mp3 */; };
+		CABEA6091CCD5C2000009080 /* C0.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CABEA6011CCD5C2000009080 /* C0.mp3 */; };
+		CABEA60A1CCD5C2000009080 /* C1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CABEA6021CCD5C2000009080 /* C1.mp3 */; };
+		CABEA60B1CCD5C2000009080 /* D.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CABEA6031CCD5C2000009080 /* D.mp3 */; };
+		CABEA60C1CCD5C2000009080 /* E.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CABEA6041CCD5C2000009080 /* E.mp3 */; };
+		CABEA60D1CCD5C2000009080 /* F.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CABEA6051CCD5C2000009080 /* F.mp3 */; };
+		CABEA60E1CCD5C2000009080 /* G.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CABEA6061CCD5C2000009080 /* G.mp3 */; };
+		CABEA6101CCD5CA700009080 /* Definitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABEA60F1CCD5CA700009080 /* Definitions.swift */; };
+		CABEA6121CCD5D4000009080 /* BluetoothManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABEA6111CCD5D4000009080 /* BluetoothManager.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		CABEA5E31CCD455700009080 /* Music Maniac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Music Maniac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CABEA5E61CCD455700009080 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CABEA5E81CCD455700009080 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		CABEA5EA1CCD455700009080 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		CABEA5EC1CCD455700009080 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		CABEA5EE1CCD455700009080 /* Game.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Game.xcassets; sourceTree = "<group>"; };
+		CABEA5F11CCD455700009080 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CABEA5F31CCD455700009080 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CABEA5F51CCD455700009080 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CABEA5FB1CCD4BCD00009080 /* Cassius Garrod.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cassius Garrod.otf"; sourceTree = "<group>"; };
+		CABEA5FD1CCD51B900009080 /* HowToPlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HowToPlayViewController.swift; sourceTree = "<group>"; };
+		CABEA5FF1CCD5C2000009080 /* A.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = A.mp3; sourceTree = "<group>"; };
+		CABEA6001CCD5C2000009080 /* B.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = B.mp3; sourceTree = "<group>"; };
+		CABEA6011CCD5C2000009080 /* C0.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = C0.mp3; sourceTree = "<group>"; };
+		CABEA6021CCD5C2000009080 /* C1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = C1.mp3; sourceTree = "<group>"; };
+		CABEA6031CCD5C2000009080 /* D.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = D.mp3; sourceTree = "<group>"; };
+		CABEA6041CCD5C2000009080 /* E.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = E.mp3; sourceTree = "<group>"; };
+		CABEA6051CCD5C2000009080 /* F.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = F.mp3; sourceTree = "<group>"; };
+		CABEA6061CCD5C2000009080 /* G.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = G.mp3; sourceTree = "<group>"; };
+		CABEA60F1CCD5CA700009080 /* Definitions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Definitions.swift; sourceTree = "<group>"; };
+		CABEA6111CCD5D4000009080 /* BluetoothManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BluetoothManager.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CABEA5E01CCD455700009080 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CABEA5DA1CCD455700009080 = {
+			isa = PBXGroup;
+			children = (
+				CABEA5FB1CCD4BCD00009080 /* Cassius Garrod.otf */,
+				CABEA5E51CCD455700009080 /* Music Maniac */,
+				CABEA5E41CCD455700009080 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CABEA5E41CCD455700009080 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CABEA5E31CCD455700009080 /* Music Maniac.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CABEA5E51CCD455700009080 /* Music Maniac */ = {
+			isa = PBXGroup;
+			children = (
+				CABEA5E61CCD455700009080 /* AppDelegate.swift */,
+				CABEA60F1CCD5CA700009080 /* Definitions.swift */,
+				CABEA5E81CCD455700009080 /* GameScene.sks */,
+				CABEA5EA1CCD455700009080 /* GameScene.swift */,
+				CABEA6111CCD5D4000009080 /* BluetoothManager.swift */,
+				CABEA5EC1CCD455700009080 /* GameViewController.swift */,
+				CABEA5EE1CCD455700009080 /* Game.xcassets */,
+				CABEA5F01CCD455700009080 /* Main.storyboard */,
+				CABEA5FD1CCD51B900009080 /* HowToPlayViewController.swift */,
+				CABEA5F31CCD455700009080 /* Assets.xcassets */,
+				CABEA5FF1CCD5C2000009080 /* A.mp3 */,
+				CABEA6001CCD5C2000009080 /* B.mp3 */,
+				CABEA6011CCD5C2000009080 /* C0.mp3 */,
+				CABEA6021CCD5C2000009080 /* C1.mp3 */,
+				CABEA6031CCD5C2000009080 /* D.mp3 */,
+				CABEA6041CCD5C2000009080 /* E.mp3 */,
+				CABEA6051CCD5C2000009080 /* F.mp3 */,
+				CABEA6061CCD5C2000009080 /* G.mp3 */,
+				CABEA5F51CCD455700009080 /* Info.plist */,
+			);
+			path = "Music Maniac";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CABEA5E21CCD455700009080 /* Music Maniac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CABEA5F81CCD455700009080 /* Build configuration list for PBXNativeTarget "Music Maniac" */;
+			buildPhases = (
+				CABEA5DF1CCD455700009080 /* Sources */,
+				CABEA5E01CCD455700009080 /* Frameworks */,
+				CABEA5E11CCD455700009080 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Music Maniac";
+			productName = "Music Maniac";
+			productReference = CABEA5E31CCD455700009080 /* Music Maniac.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CABEA5DB1CCD455700009080 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Ticklin' The Ivories";
+				TargetAttributes = {
+					CABEA5E21CCD455700009080 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+				};
+			};
+			buildConfigurationList = CABEA5DE1CCD455700009080 /* Build configuration list for PBXProject "Music Maniac" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CABEA5DA1CCD455700009080;
+			productRefGroup = CABEA5E41CCD455700009080 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CABEA5E21CCD455700009080 /* Music Maniac */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CABEA5E11CCD455700009080 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CABEA60C1CCD5C2000009080 /* E.mp3 in Resources */,
+				CABEA6071CCD5C2000009080 /* A.mp3 in Resources */,
+				CABEA60E1CCD5C2000009080 /* G.mp3 in Resources */,
+				CABEA60B1CCD5C2000009080 /* D.mp3 in Resources */,
+				CABEA5FC1CCD4BCD00009080 /* Cassius Garrod.otf in Resources */,
+				CABEA5F21CCD455700009080 /* Main.storyboard in Resources */,
+				CABEA5E91CCD455700009080 /* GameScene.sks in Resources */,
+				CABEA60A1CCD5C2000009080 /* C1.mp3 in Resources */,
+				CABEA6081CCD5C2000009080 /* B.mp3 in Resources */,
+				CABEA5F41CCD455700009080 /* Assets.xcassets in Resources */,
+				CABEA60D1CCD5C2000009080 /* F.mp3 in Resources */,
+				CABEA5EF1CCD455700009080 /* Game.xcassets in Resources */,
+				CABEA6091CCD5C2000009080 /* C0.mp3 in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CABEA5DF1CCD455700009080 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CABEA5EB1CCD455700009080 /* GameScene.swift in Sources */,
+				CABEA5ED1CCD455700009080 /* GameViewController.swift in Sources */,
+				CABEA5FE1CCD51B900009080 /* HowToPlayViewController.swift in Sources */,
+				CABEA6101CCD5CA700009080 /* Definitions.swift in Sources */,
+				CABEA6121CCD5D4000009080 /* BluetoothManager.swift in Sources */,
+				CABEA5E71CCD455700009080 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		CABEA5F01CCD455700009080 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CABEA5F11CCD455700009080 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CABEA5F61CCD455700009080 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = appletvos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.2;
+			};
+			name = Debug;
+		};
+		CABEA5F71CCD455700009080 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CABEA5F91CCD455700009080 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "Music Maniac/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.TicklinTheIvories.Music-Maniac";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		CABEA5FA1CCD455700009080 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "Music Maniac/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.TicklinTheIvories.Music-Maniac";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CABEA5DE1CCD455700009080 /* Build configuration list for PBXProject "Music Maniac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CABEA5F61CCD455700009080 /* Debug */,
+				CABEA5F71CCD455700009080 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CABEA5F81CCD455700009080 /* Build configuration list for PBXNativeTarget "Music Maniac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CABEA5F91CCD455700009080 /* Debug */,
+				CABEA5FA1CCD455700009080 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CABEA5DB1CCD455700009080 /* Project object */;
+}
