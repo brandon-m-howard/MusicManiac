@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA187E631CCDA4CE00479599 /* HighScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA187E621CCDA4CE00479599 /* HighScoreViewController.swift */; };
 		CABEA5E71CCD455700009080 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABEA5E61CCD455700009080 /* AppDelegate.swift */; };
 		CABEA5E91CCD455700009080 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = CABEA5E81CCD455700009080 /* GameScene.sks */; };
 		CABEA5EB1CCD455700009080 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABEA5EA1CCD455700009080 /* GameScene.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CA187E621CCDA4CE00479599 /* HighScoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighScoreViewController.swift; sourceTree = "<group>"; };
 		CABEA5E31CCD455700009080 /* Music Maniac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Music Maniac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CABEA5E61CCD455700009080 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CABEA5E81CCD455700009080 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -63,6 +65,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CA187E601CCDA45A00479599 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				CABEA5E81CCD455700009080 /* GameScene.sks */,
+				CABEA5EA1CCD455700009080 /* GameScene.swift */,
+				CABEA5EC1CCD455700009080 /* GameViewController.swift */,
+			);
+			name = Game;
+			sourceTree = "<group>";
+		};
+		CA187E611CCDA47800479599 /* Bluetooth */ = {
+			isa = PBXGroup;
+			children = (
+				CABEA60F1CCD5CA700009080 /* Definitions.swift */,
+				CABEA6111CCD5D4000009080 /* BluetoothManager.swift */,
+			);
+			name = Bluetooth;
+			sourceTree = "<group>";
+		};
 		CABEA5DA1CCD455700009080 = {
 			isa = PBXGroup;
 			children = (
@@ -84,14 +105,12 @@
 			isa = PBXGroup;
 			children = (
 				CABEA5E61CCD455700009080 /* AppDelegate.swift */,
-				CABEA60F1CCD5CA700009080 /* Definitions.swift */,
-				CABEA5E81CCD455700009080 /* GameScene.sks */,
-				CABEA5EA1CCD455700009080 /* GameScene.swift */,
-				CABEA6111CCD5D4000009080 /* BluetoothManager.swift */,
-				CABEA5EC1CCD455700009080 /* GameViewController.swift */,
+				CABEA5FD1CCD51B900009080 /* HowToPlayViewController.swift */,
+				CA187E621CCDA4CE00479599 /* HighScoreViewController.swift */,
+				CA187E611CCDA47800479599 /* Bluetooth */,
+				CA187E601CCDA45A00479599 /* Game */,
 				CABEA5EE1CCD455700009080 /* Game.xcassets */,
 				CABEA5F01CCD455700009080 /* Main.storyboard */,
-				CABEA5FD1CCD51B900009080 /* HowToPlayViewController.swift */,
 				CABEA5F31CCD455700009080 /* Assets.xcassets */,
 				CABEA5FF1CCD5C2000009080 /* A.mp3 */,
 				CABEA6001CCD5C2000009080 /* B.mp3 */,
@@ -188,6 +207,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CABEA5EB1CCD455700009080 /* GameScene.swift in Sources */,
+				CA187E631CCDA4CE00479599 /* HighScoreViewController.swift in Sources */,
 				CABEA5ED1CCD455700009080 /* GameViewController.swift in Sources */,
 				CABEA5FE1CCD51B900009080 /* HowToPlayViewController.swift in Sources */,
 				CABEA6101CCD5CA700009080 /* Definitions.swift in Sources */,
@@ -338,6 +358,7 @@
 				CABEA5FA1CCD455700009080 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

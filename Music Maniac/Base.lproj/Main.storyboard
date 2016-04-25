@@ -157,10 +157,10 @@ Open the controller on your iPhone and connect to your AppleTV. Press the correc
             </objects>
             <point key="canvasLocation" x="137" y="1781"/>
         </scene>
-        <!--View Controller-->
+        <!--High Score View Controller-->
         <scene sceneID="fIj-tG-HM9">
             <objects>
-                <viewController id="eOQ-tI-qnn" sceneMemberID="viewController">
+                <viewController id="eOQ-tI-qnn" customClass="HighScoreViewController" customModule="Music_Maniac" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rMR-Af-Vb1"/>
                         <viewControllerLayoutGuide type="bottom" id="y49-pQ-kLt"/>
