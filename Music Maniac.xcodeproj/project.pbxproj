@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CA187E631CCDA4CE00479599 /* HighScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA187E621CCDA4CE00479599 /* HighScoreViewController.swift */; };
+		CA187E651CCDAC1500479599 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA187E641CCDAC1500479599 /* MainMenuViewController.swift */; };
 		CABEA5E71CCD455700009080 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABEA5E61CCD455700009080 /* AppDelegate.swift */; };
 		CABEA5E91CCD455700009080 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = CABEA5E81CCD455700009080 /* GameScene.sks */; };
 		CABEA5EB1CCD455700009080 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABEA5EA1CCD455700009080 /* GameScene.swift */; };
@@ -31,6 +32,7 @@
 
 /* Begin PBXFileReference section */
 		CA187E621CCDA4CE00479599 /* HighScoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighScoreViewController.swift; sourceTree = "<group>"; };
+		CA187E641CCDAC1500479599 /* MainMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		CABEA5E31CCD455700009080 /* Music Maniac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Music Maniac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CABEA5E61CCD455700009080 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CABEA5E81CCD455700009080 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				CABEA5E61CCD455700009080 /* AppDelegate.swift */,
+				CA187E641CCDAC1500479599 /* MainMenuViewController.swift */,
 				CABEA5FD1CCD51B900009080 /* HowToPlayViewController.swift */,
 				CA187E621CCDA4CE00479599 /* HighScoreViewController.swift */,
 				CA187E611CCDA47800479599 /* Bluetooth */,
@@ -206,6 +209,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA187E651CCDAC1500479599 /* MainMenuViewController.swift in Sources */,
 				CABEA5EB1CCD455700009080 /* GameScene.swift in Sources */,
 				CA187E631CCDA4CE00479599 /* HighScoreViewController.swift in Sources */,
 				CABEA5ED1CCD455700009080 /* GameViewController.swift in Sources */,

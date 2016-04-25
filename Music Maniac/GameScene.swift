@@ -41,14 +41,28 @@ class GameScene: SKScene, BluetoothManagerDelegate {
 		alpaca.xScale = 0.25
 		alpaca.yScale = 0.25
 		alpaca.position = CGPointMake(200, frame.height / 2.75)
-		alpaca.physicsBody = SKPhysicsBody(rectangleOfSize: CGSize(width: alpaca.size.width, height: alpaca.size.height))
+		alpaca.physicsBody = SKPhysicsBody(rectangleOfSize: CGSize(width: alpaca.size.width - 20, height: alpaca.size.height - 20))
 		alpaca.physicsBody?.dynamic = true
 		alpaca.physicsBody?.allowsRotation = false
+		alpaca.zPosition = 1
 		self.addChild(alpaca)
 	}
 
 	func addBackground() {
+		var background = SKSpriteNode(imageNamed: "sky")
+		background.position = CGPoint(x: 0, y: 0)
+		background.anchorPoint = CGPoint(x: 0, y: 0)
+		background.size.width = self.frame.size.width
+		background.size.height = self.frame.size.height
+		background.zPosition = -2
+		self.addChild(background)
 
+//		var cloud1 = SKSpriteNode(imageNamed: "cloud1")
+//		cloud1.position = CGPointMake(200, frame.height / 2.75)
+//		let move = SKAction.moveToX(-cloud1.size.width, duration: 10)
+//		cloud1.zPosition = -1
+//		cloud1.runAction(move)
+//		self.addChild(cloud1)
 	}
 
 	func addGround() {
@@ -60,6 +74,7 @@ class GameScene: SKScene, BluetoothManagerDelegate {
 			block.position = CGPointMake(0 + CGFloat(iBlock)*block.size.width, 125)
 			block.physicsBody = SKPhysicsBody(rectangleOfSize: CGSize(width: block.size.width, height: block.size.height))
 			block.physicsBody?.dynamic = false
+			block.zPosition = 0
 			self.addChild(block)
 		}
 	}
@@ -75,13 +90,13 @@ class GameScene: SKScene, BluetoothManagerDelegate {
 		scoreLabel.horizontalAlignmentMode = .Left
 		scoreLabel.verticalAlignmentMode = .Top
 		scoreLabel.position = CGPoint(x: 20, y: self.frame.height - 110)
-
+		scoreLabel.zPosition = 0
 		self.addChild(scoreLabel)
 	}
 
 	func jump() {
 		alpaca.physicsBody!.velocity = CGVectorMake(0, 0)
-		alpaca.physicsBody!.applyImpulse(CGVectorMake(0, 1200))
+		alpaca.physicsBody!.applyImpulse(CGVectorMake(0, 1000))
 	}
 
 	override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {

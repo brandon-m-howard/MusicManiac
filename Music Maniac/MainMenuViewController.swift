@@ -1,5 +1,5 @@
 //
-//  HighScoreViewController.swift
+//  MainMenuViewController.swift
 //  Music Maniac
 //
 //  Created by Brandon Howard on 4/24/16.
@@ -7,7 +7,8 @@
 //
 
 import UIKit
+import SpriteKit
 
-class HighScoreViewController: UIViewController {
+class MainMenuViewController: UIViewController {
 
 }

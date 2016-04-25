@@ -15,10 +15,10 @@
         </mutableArray>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Main Menu View Controller-->
         <scene sceneID="JgS-gw-imy">
             <objects>
-                <viewController id="D3K-eK-Iif" sceneMemberID="viewController">
+                <viewController id="D3K-eK-Iif" customClass="MainMenuViewController" customModule="Music_Maniac" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Q1P-N6-0WV"/>
                         <viewControllerLayoutGuide type="bottom" id="ime-Tm-3Me"/>
@@ -40,7 +40,7 @@
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
                                 <state key="normal" title="Play"/>
                                 <connections>
-                                    <segue destination="499-42-d0g" kind="presentation" id="XP7-Pi-81r"/>
+                                    <segue destination="499-42-d0g" kind="presentation" id="SCj-UC-Way"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BgF-hf-48L">
