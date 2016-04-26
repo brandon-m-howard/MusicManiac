@@ -14,6 +14,8 @@ class GameScene: SKScene, BluetoothManagerDelegate {
 	var alpaca: SKSpriteNode!
 	var ground = [SKSpriteNode]()
 	var scoreLabel: SKLabelNode!
+	var note: SKSpriteNode!
+	var noteString: String!
 	let GROUND_BLOCKS = 20
 	let MAX_HEALTH = 3
 	var health = 0
@@ -30,6 +32,40 @@ class GameScene: SKScene, BluetoothManagerDelegate {
 		addHealth()
 		addAlpacaToView()
 		addScore()
+		addNote(randomNoteString())
+	}
+
+	func randomNoteString() -> String {
+		let random = Int(arc4random_uniform(8))
+		switch (random) {
+		case 1:
+			noteString = "C0"
+			return "C0"
+		case 2:
+			noteString = "D"
+			return "D"
+		case 3:
+			noteString = "E"
+			return "E"
+		case 4:
+			noteString = "F"
+			return "F"
+		case 5:
+			noteString = "G"
+			return "G"
+		case 6:
+			noteString = "A"
+			return "A"
+		case 7:
+			noteString = "B"
+			return "B"
+		case 8:
+			noteString = "C1"
+			return "C1"
+		default:
+			noteString = "C1"
+			return "C1"
+		}
 	}
 
 	func addGravityToView() {
@@ -102,9 +138,15 @@ class GameScene: SKScene, BluetoothManagerDelegate {
 	override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
 
 		for touch in touches {
+			destroyNote()
 			jump()
+			addNote(randomNoteString())
 		}
 
+	}
+
+	func destroyNote() {
+		note.removeFromParent()
 	}
 
 	override func update(currentTime: CFTimeInterval) {
@@ -122,8 +164,24 @@ class GameScene: SKScene, BluetoothManagerDelegate {
 		self.runAction(soundAction)
 	}
 
+	func addNote(noteString: String) {
+		note = SKSpriteNode(imageNamed: noteString)
+		note.xScale = 0.25
+		note.yScale = 0.25
+		note.position = CGPointMake(500, 500)
+		note.physicsBody = SKPhysicsBody(rectangleOfSize: CGSize(width: note.size.width, height: note.size.height))
+		note.physicsBody?.dynamic = true
+		note.physicsBody?.allowsRotation = false
+		note.zPosition = 1
+		self.addChild(note)
+	}
+
 	func keyWasPressed(key: String) {
 		playSound(key)
 		print(key)
+
+		if (key == noteString) {
+			jump()
+		}
 	}
 }
