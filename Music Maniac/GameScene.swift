@@ -32,7 +32,15 @@ class GameScene: SKScene, BluetoothManagerDelegate {
 		addHealth()
 		addAlpacaToView()
 		addScore()
-		addNote(randomNoteString())
+		setupNoteAction()
+	}
+
+	func setupNoteAction() {
+		let waitAction = SKAction.waitForDuration(5)
+		let noteAction = SKAction.runBlock({ self.addNote() })
+		let sequenceAction = SKAction.sequence([noteAction, waitAction])
+		let repeatAction = SKAction.repeatActionForever(sequenceAction)
+		self.runAction(repeatAction)
 	}
 
 	func randomNoteString() -> String {
@@ -81,6 +89,7 @@ class GameScene: SKScene, BluetoothManagerDelegate {
 		alpaca.physicsBody?.dynamic = true
 		alpaca.physicsBody?.allowsRotation = false
 		alpaca.zPosition = 1
+		alpaca.physicsBody?.friction = 1.0
 		self.addChild(alpaca)
 	}
 
@@ -130,6 +139,24 @@ class GameScene: SKScene, BluetoothManagerDelegate {
 		self.addChild(scoreLabel)
 	}
 
+	func addNote() {
+		let noteString = randomNoteString()
+		let note = SKSpriteNode(imageNamed: noteString)
+		note.xScale = 0.25
+		note.yScale = 0.25
+		note.position = CGPointMake(self.frame.width + note.size.width, 290)
+		note.physicsBody = SKPhysicsBody(rectangleOfSize: CGSize(width: note.size.width, height: note.size.height))
+		note.physicsBody?.dynamic = true
+		note.physicsBody?.allowsRotation = false
+		note.zPosition = 1
+		note.physicsBody?.friction = 1.0
+		let moveAction = SKAction.moveToX(-note.size.width, duration: 10)
+		let deleteAction = SKAction.removeFromParent()
+		let sequenceAction = SKAction.sequence([moveAction, deleteAction])
+		note.runAction(sequenceAction)
+		self.addChild(note)
+	}
+
 	func jump() {
 		alpaca.physicsBody!.velocity = CGVectorMake(0, 0)
 		alpaca.physicsBody!.applyImpulse(CGVectorMake(0, 1000))
@@ -138,9 +165,9 @@ class GameScene: SKScene, BluetoothManagerDelegate {
 	override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
 
 		for touch in touches {
-			destroyNote()
-			jump()
-			addNote(randomNoteString())
+//			destroyNote()
+//			jump()
+//			addNote(randomNoteString())
 		}
 
 	}
@@ -150,7 +177,7 @@ class GameScene: SKScene, BluetoothManagerDelegate {
 	}
 
 	override func update(currentTime: CFTimeInterval) {
-		incrementScore()
+
 	}
 
 	func incrementScore() {
@@ -160,20 +187,8 @@ class GameScene: SKScene, BluetoothManagerDelegate {
 
 	
 	func playSound(sound: String) {
-		let soundAction = SKAction.playSoundFileNamed(sound, waitForCompletion: false)
-		self.runAction(soundAction)
-	}
-
-	func addNote(noteString: String) {
-		note = SKSpriteNode(imageNamed: noteString)
-		note.xScale = 0.25
-		note.yScale = 0.25
-		note.position = CGPointMake(500, 500)
-		note.physicsBody = SKPhysicsBody(rectangleOfSize: CGSize(width: note.size.width, height: note.size.height))
-		note.physicsBody?.dynamic = true
-		note.physicsBody?.allowsRotation = false
-		note.zPosition = 1
-		self.addChild(note)
+//		let soundAction = SKAction.playSoundFileNamed(sound, waitForCompletion: false)
+//		self.runAction(soundAction)
 	}
 
 	func keyWasPressed(key: String) {
@@ -182,6 +197,9 @@ class GameScene: SKScene, BluetoothManagerDelegate {
 
 		if (key == noteString) {
 			jump()
+//			destroyNote()
+//			addNote(randomNoteString())
+			incrementScore()
 		}
 	}
 }
