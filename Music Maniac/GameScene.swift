@@ -8,7 +8,7 @@
 
 import SpriteKit
 
-class GameScene: SKScene, BluetoothManagerDelegate {
+class GameScene: SKScene, BluetoothManagerDelegate, SKPhysicsContactDelegate {
 
 	var bluetooth: BluetoothManager!
 	var alpaca: SKSpriteNode!
@@ -16,16 +16,22 @@ class GameScene: SKScene, BluetoothManagerDelegate {
 	var scoreLabel: SKLabelNode!
 	var note: SKSpriteNode!
 	var noteString: String!
+	var soundActions = [SKAction]()
 	let GROUND_BLOCKS = 20
 	let MAX_HEALTH = 3
 	var health = 0
 	var score = 0
+	let noteCategory: UInt32 = 0x1 << 0
+	let alpacaCategory: UInt32 = 0x1 << 1
 
 	override func didMoveToView(view: SKView) {
 		bluetooth = BluetoothManager()
 		bluetooth.setup()
 		bluetooth.delegate = self
 
+		self.physicsWorld.contactDelegate = self // For collision detection
+
+		setupAudio()
 		addGravityToView()
 		addBackground()
 		addGround()
@@ -35,8 +41,27 @@ class GameScene: SKScene, BluetoothManagerDelegate {
 		setupNoteAction()
 	}
 
+	func setupAudio() {
+		let c0 = SKAction.playSoundFileNamed("C0", waitForCompletion: false)
+		soundActions.append(c0)
+		let d = SKAction.playSoundFileNamed("D", waitForCompletion: false)
+		soundActions.append(d)
+		let e = SKAction.playSoundFileNamed("E", waitForCompletion: false)
+		soundActions.append(e)
+		let f = SKAction.playSoundFileNamed("F", waitForCompletion: false)
+		soundActions.append(f)
+		let g = SKAction.playSoundFileNamed("G", waitForCompletion: false)
+		soundActions.append(g)
+		let a = SKAction.playSoundFileNamed("A", waitForCompletion: false)
+		soundActions.append(a)
+		let b = SKAction.playSoundFileNamed("B", waitForCompletion: false)
+		soundActions.append(b)
+		let c1 = SKAction.playSoundFileNamed("C1", waitForCompletion: false)
+		soundActions.append(c1)
+	}
+
 	func setupNoteAction() {
-		let waitAction = SKAction.waitForDuration(5)
+		let waitAction = SKAction.waitForDuration(8)
 		let noteAction = SKAction.runBlock({ self.addNote() })
 		let sequenceAction = SKAction.sequence([noteAction, waitAction])
 		let repeatAction = SKAction.repeatActionForever(sequenceAction)
@@ -90,24 +115,20 @@ class GameScene: SKScene, BluetoothManagerDelegate {
 		alpaca.physicsBody?.allowsRotation = false
 		alpaca.zPosition = 1
 		alpaca.physicsBody?.friction = 1.0
+		alpaca.physicsBody?.usesPreciseCollisionDetection = true
+		alpaca.physicsBody?.contactTestBitMask = noteCategory
+		alpaca.physicsBody?.categoryBitMask = alpacaCategory
 		self.addChild(alpaca)
 	}
 
 	func addBackground() {
-		var background = SKSpriteNode(imageNamed: "sky")
+		let background = SKSpriteNode(imageNamed: "sky")
 		background.position = CGPoint(x: 0, y: 0)
 		background.anchorPoint = CGPoint(x: 0, y: 0)
 		background.size.width = self.frame.size.width
 		background.size.height = self.frame.size.height
 		background.zPosition = -2
 		self.addChild(background)
-
-//		var cloud1 = SKSpriteNode(imageNamed: "cloud1")
-//		cloud1.position = CGPointMake(200, frame.height / 2.75)
-//		let move = SKAction.moveToX(-cloud1.size.width, duration: 10)
-//		cloud1.zPosition = -1
-//		cloud1.runAction(move)
-//		self.addChild(cloud1)
 	}
 
 	func addGround() {
@@ -150,6 +171,10 @@ class GameScene: SKScene, BluetoothManagerDelegate {
 		note.physicsBody?.allowsRotation = false
 		note.zPosition = 1
 		note.physicsBody?.friction = 1.0
+		note.physicsBody?.usesPreciseCollisionDetection = true
+		note.physicsBody?.categoryBitMask = noteCategory
+		note.physicsBody?.collisionBitMask = alpacaCategory
+		note.physicsBody?.contactTestBitMask = alpacaCategory
 		let moveAction = SKAction.moveToX(-note.size.width, duration: 10)
 		let deleteAction = SKAction.removeFromParent()
 		let sequenceAction = SKAction.sequence([moveAction, deleteAction])
@@ -159,16 +184,20 @@ class GameScene: SKScene, BluetoothManagerDelegate {
 
 	func jump() {
 		alpaca.physicsBody!.velocity = CGVectorMake(0, 0)
-		alpaca.physicsBody!.applyImpulse(CGVectorMake(0, 1000))
+		alpaca.physicsBody!.applyImpulse(CGVectorMake(0, 2000))
+//		let fireEffect = SKEmitterNode(fileNamed: "FireParticleEffect")
+//		fireEffect!.position = CGPointMake(alpaca.size.width/2, -alpaca.size.height)
+//		fireEffect!.name = "sparkEmmitter"
+//		fireEffect!.zPosition = 1
+//		fireEffect!.targetNode = alpaca
+//		fireEffect!.particleLifetime = 0.5
+//		fireEffect!.particleColor = UIColor.orangeColor()
+//		alpaca.addChild(fireEffect!)
 	}
 
 	override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
 
-		for touch in touches {
-//			destroyNote()
-//			jump()
-//			addNote(randomNoteString())
-		}
+		for touch in touches {  }
 
 	}
 
@@ -177,7 +206,11 @@ class GameScene: SKScene, BluetoothManagerDelegate {
 	}
 
 	override func update(currentTime: CFTimeInterval) {
+		if (health <= 0) {
+			print("GAME OVER")
 
+
+		}
 	}
 
 	func incrementScore() {
@@ -187,19 +220,50 @@ class GameScene: SKScene, BluetoothManagerDelegate {
 
 	
 	func playSound(sound: String) {
-//		let soundAction = SKAction.playSoundFileNamed(sound, waitForCompletion: false)
-//		self.runAction(soundAction)
+		switch (sound) {
+		case "C0":
+			runAction(soundActions[0])
+		case "D":
+			runAction(soundActions[1])
+		case "E":
+			runAction(soundActions[2])
+		case "F":
+			runAction(soundActions[3])
+		case "G":
+			runAction(soundActions[4])
+		case "A":
+			runAction(soundActions[5])
+		case "B":
+			runAction(soundActions[6])
+		case "C1":
+			runAction(soundActions[7])
+		default:
+			runAction(soundActions[0])
+		}
+	}
+
+	func didBeginContact(contact: SKPhysicsContact) {
+
+//		let firstNode = contact.bodyA.node as! SKSpriteNode
+//		let secondNode = contact.bodyB.node as! SKSpriteNode
+
+		if (contact.bodyA.categoryBitMask == alpacaCategory) &&
+			(contact.bodyB.categoryBitMask == noteCategory) {
+
+			print("COLLISION")
+			health -= 1
+		}
+
 	}
 
 	func keyWasPressed(key: String) {
-		playSound(key)
-		print(key)
 
 		if (key == noteString) {
 			jump()
-//			destroyNote()
-//			addNote(randomNoteString())
+			playSound(key)
 			incrementScore()
+		} else {
+			health -= 1
 		}
 	}
 }
