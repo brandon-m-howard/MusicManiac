@@ -13,6 +13,7 @@ class GameScene: SKScene, BluetoothManagerDelegate, SKPhysicsContactDelegate {
 	var bluetooth: BluetoothManager!
 	var alpaca: SKSpriteNode!
 	var ground = [SKSpriteNode]()
+	var hearts = [SKSpriteNode]()
 	var scoreLabel: SKLabelNode!
 	var note: SKSpriteNode!
 	var noteString: String!
@@ -147,6 +148,15 @@ class GameScene: SKScene, BluetoothManagerDelegate, SKPhysicsContactDelegate {
 
 	func addHealth() {
 		health = MAX_HEALTH
+		for iHealth in 0..<MAX_HEALTH {
+			let heart = SKSpriteNode(imageNamed: "heart")
+			hearts.append(heart)
+			heart.xScale = 0.25
+			heart.yScale = 0.25
+			heart.position = CGPointMake(self.frame.width - CGFloat(iHealth+1)*heart.size.width - CGFloat(iHealth)*10, self.frame.height - heart.size.height*3)
+			heart.zPosition = 0
+			self.addChild(heart)
+		}
 	}
 
 	func addScore() {
@@ -185,14 +195,6 @@ class GameScene: SKScene, BluetoothManagerDelegate, SKPhysicsContactDelegate {
 	func jump() {
 		alpaca.physicsBody!.velocity = CGVectorMake(0, 0)
 		alpaca.physicsBody!.applyImpulse(CGVectorMake(0, 2000))
-//		let fireEffect = SKEmitterNode(fileNamed: "FireParticleEffect")
-//		fireEffect!.position = CGPointMake(alpaca.size.width/2, -alpaca.size.height)
-//		fireEffect!.name = "sparkEmmitter"
-//		fireEffect!.zPosition = 1
-//		fireEffect!.targetNode = alpaca
-//		fireEffect!.particleLifetime = 0.5
-//		fireEffect!.particleColor = UIColor.orangeColor()
-//		alpaca.addChild(fireEffect!)
 	}
 
 	override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -216,6 +218,21 @@ class GameScene: SKScene, BluetoothManagerDelegate, SKPhysicsContactDelegate {
 	func incrementScore() {
 		score += 1
 		scoreLabel.text = "Score:  \(score)"
+		incrementHealth()
+	}
+
+	func decrementHealth() {
+		if health > 0 {
+			health -= 1
+			hearts[health].hidden = true
+		}
+	}
+
+	func incrementHealth() {
+		if health < MAX_HEALTH {
+			health += 1
+			hearts[health - 1].hidden = false
+		}
 	}
 
 	
@@ -244,14 +261,13 @@ class GameScene: SKScene, BluetoothManagerDelegate, SKPhysicsContactDelegate {
 
 	func didBeginContact(contact: SKPhysicsContact) {
 
-//		let firstNode = contact.bodyA.node as! SKSpriteNode
-//		let secondNode = contact.bodyB.node as! SKSpriteNode
+		let secondNode = contact.bodyB.node as! SKSpriteNode
 
 		if (contact.bodyA.categoryBitMask == alpacaCategory) &&
 			(contact.bodyB.categoryBitMask == noteCategory) {
-
+			secondNode.removeFromParent()
 			print("COLLISION")
-			health -= 1
+			decrementHealth()
 		}
 
 	}
@@ -263,7 +279,7 @@ class GameScene: SKScene, BluetoothManagerDelegate, SKPhysicsContactDelegate {
 			playSound(key)
 			incrementScore()
 		} else {
-			health -= 1
+			decrementHealth()
 		}
 	}
 }
