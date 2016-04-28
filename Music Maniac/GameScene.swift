@@ -10,6 +10,8 @@ import SpriteKit
 
 class GameScene: SKScene, BluetoothManagerDelegate, SKPhysicsContactDelegate {
 
+	var gameIsActive = true
+	var canPlayKey = true
 	var bluetooth: BluetoothManager!
 	var alpaca: SKSpriteNode!
 	var ground = [SKSpriteNode]()
@@ -24,6 +26,11 @@ class GameScene: SKScene, BluetoothManagerDelegate, SKPhysicsContactDelegate {
 	var score = 0
 	let noteCategory: UInt32 = 0x1 << 0
 	let alpacaCategory: UInt32 = 0x1 << 1
+	let groundCategory: UInt32 = 0x1 << 2
+	var controller: GameViewController!
+	var healthRegeneration = 0
+	let nHealthRegeneration = 3
+	var levelId = ""
 
 	override func didMoveToView(view: SKView) {
 		bluetooth = BluetoothManager()
@@ -63,7 +70,7 @@ class GameScene: SKScene, BluetoothManagerDelegate, SKPhysicsContactDelegate {
 
 	func setupNoteAction() {
 		let waitAction = SKAction.waitForDuration(8)
-		let noteAction = SKAction.runBlock({ self.addNote() })
+		let noteAction = SKAction.runBlock({ self.addNote(); self.canPlayKey = true })
 		let sequenceAction = SKAction.sequence([noteAction, waitAction])
 		let repeatAction = SKAction.repeatActionForever(sequenceAction)
 		self.runAction(repeatAction)
@@ -103,7 +110,7 @@ class GameScene: SKScene, BluetoothManagerDelegate, SKPhysicsContactDelegate {
 	}
 
 	func addGravityToView() {
-		self.physicsWorld.gravity = CGVectorMake(0.0, -4.9)
+		self.physicsWorld.gravity = CGVectorMake(0.0, -1) //-4.9
 	}
 
 	func addAlpacaToView() {
@@ -142,6 +149,10 @@ class GameScene: SKScene, BluetoothManagerDelegate, SKPhysicsContactDelegate {
 			block.physicsBody = SKPhysicsBody(rectangleOfSize: CGSize(width: block.size.width, height: block.size.height))
 			block.physicsBody?.dynamic = false
 			block.zPosition = 0
+//			block.physicsBody?.usesPreciseCollisionDetection = true
+//			block.physicsBody?.categoryBitMask = groundCategory
+//			block.physicsBody?.collisionBitMask = alpacaCategory
+//			block.physicsBody?.contactTestBitMask = alpacaCategory
 			self.addChild(block)
 		}
 	}
@@ -172,7 +183,7 @@ class GameScene: SKScene, BluetoothManagerDelegate, SKPhysicsContactDelegate {
 
 	func addNote() {
 		let noteString = randomNoteString()
-		let note = SKSpriteNode(imageNamed: noteString)
+		let note = SKSpriteNode(imageNamed: noteString + levelId)
 		note.xScale = 0.25
 		note.yScale = 0.25
 		note.position = CGPointMake(self.frame.width + note.size.width, 290)
@@ -194,7 +205,7 @@ class GameScene: SKScene, BluetoothManagerDelegate, SKPhysicsContactDelegate {
 
 	func jump() {
 		alpaca.physicsBody!.velocity = CGVectorMake(0, 0)
-		alpaca.physicsBody!.applyImpulse(CGVectorMake(0, 2000))
+		alpaca.physicsBody!.applyImpulse(CGVectorMake(0, 550))
 	}
 
 	override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -210,8 +221,12 @@ class GameScene: SKScene, BluetoothManagerDelegate, SKPhysicsContactDelegate {
 	override func update(currentTime: CFTimeInterval) {
 		if (health <= 0) {
 			print("GAME OVER")
-
-
+			gameIsActive = false
+			self.removeAllActions()
+			self.removeAllChildren()
+			health = 3
+			controller.toGameOver()
+			controller = nil
 		}
 	}
 
@@ -229,10 +244,12 @@ class GameScene: SKScene, BluetoothManagerDelegate, SKPhysicsContactDelegate {
 	}
 
 	func incrementHealth() {
-		if health < MAX_HEALTH {
+		if health < MAX_HEALTH && healthRegeneration == nHealthRegeneration - 1 {
 			health += 1
 			hearts[health - 1].hidden = false
+			healthRegeneration = 0
 		}
+		healthRegeneration = (healthRegeneration + 1) % nHealthRegeneration
 	}
 
 	
@@ -261,25 +278,28 @@ class GameScene: SKScene, BluetoothManagerDelegate, SKPhysicsContactDelegate {
 
 	func didBeginContact(contact: SKPhysicsContact) {
 
-		let secondNode = contact.bodyB.node as! SKSpriteNode
-
 		if (contact.bodyA.categoryBitMask == alpacaCategory) &&
 			(contact.bodyB.categoryBitMask == noteCategory) {
-			secondNode.removeFromParent()
+			(contact.bodyB.node as! SKSpriteNode).removeFromParent()
 			print("COLLISION")
 			decrementHealth()
 		}
 
+
 	}
 
 	func keyWasPressed(key: String) {
-
-		if (key == noteString) {
-			jump()
-			playSound(key)
-			incrementScore()
-		} else {
-			decrementHealth()
+		if (gameIsActive) {
+			if (key == noteString && canPlayKey) {
+				canPlayKey = false
+				jump()
+				playSound(key)
+				incrementScore()
+			} else if key == noteString && !canPlayKey {
+				// nothing?
+			} else {
+				decrementHealth()
+			}
 		}
 	}
 }

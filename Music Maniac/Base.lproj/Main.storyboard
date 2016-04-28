@@ -12,6 +12,7 @@
             <string>CassiusGarrod</string>
             <string>CassiusGarrod</string>
             <string>CassiusGarrod</string>
+            <string>CassiusGarrod</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -105,6 +106,7 @@ Maniac</string>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dFw-Vm-EKT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="JZ0-K4-LJP" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-1888" y="559"/>
         </scene>
@@ -186,10 +188,67 @@ Open the controller on your iPhone and connect to your AppleTV. Press the correc
                         <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     </view>
+                    <connections>
+                        <segue destination="wnM-Kh-v9R" kind="show" identifier="ToGameOver" id="vqO-NY-791"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dFW-Nd-Df7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137" y="559"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="pmJ-M2-uab">
+            <objects>
+                <viewController id="wnM-Kh-v9R" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="on0-as-GKv"/>
+                        <viewControllerLayoutGuide type="bottom" id="LQb-tg-zpf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YCc-Xy-kXj">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3gu-MY-zkG">
+                                <rect key="frame" x="20" y="388" width="1880" height="114"/>
+                                <fontDescription key="fontDescription" name="CassiusGarrod" family="Cassius Garrod" pointSize="76"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Xk-if-aMc">
+                                <rect key="frame" x="995" y="526" width="269" height="86"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="269" id="nAt-Wz-ISI"/>
+                                </constraints>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="Restart"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5nQ-G3-fXt">
+                                <rect key="frame" x="657" y="526" width="269" height="86"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="86" id="GDV-ND-DYo"/>
+                                </constraints>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="Main Menu"/>
+                                <connections>
+                                    <segue destination="JZ0-K4-LJP" kind="unwind" unwindAction="unwindToMainMenu:" id="o4U-Zc-lih"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="3gu-MY-zkG" firstAttribute="top" secondItem="on0-as-GKv" secondAttribute="bottom" constant="388" id="4EJ-sH-C1e"/>
+                            <constraint firstItem="5Xk-if-aMc" firstAttribute="leading" secondItem="5nQ-G3-fXt" secondAttribute="trailing" constant="69" id="6wz-Id-avO"/>
+                            <constraint firstItem="5nQ-G3-fXt" firstAttribute="leading" secondItem="YCc-Xy-kXj" secondAttribute="leading" constant="657" id="BxO-5p-ema"/>
+                            <constraint firstItem="3gu-MY-zkG" firstAttribute="trailing" secondItem="YCc-Xy-kXj" secondAttribute="trailingMargin" id="FIG-qm-G6O"/>
+                            <constraint firstItem="5nQ-G3-fXt" firstAttribute="top" secondItem="3gu-MY-zkG" secondAttribute="bottom" constant="24" id="aju-v7-RzH"/>
+                            <constraint firstItem="3gu-MY-zkG" firstAttribute="leading" secondItem="YCc-Xy-kXj" secondAttribute="leadingMargin" id="bHW-AY-IpR"/>
+                            <constraint firstItem="LQb-tg-zpf" firstAttribute="top" secondItem="5nQ-G3-fXt" secondAttribute="bottom" constant="468" id="qPc-Rw-uvi"/>
+                            <constraint firstItem="5nQ-G3-fXt" firstAttribute="baseline" secondItem="5Xk-if-aMc" secondAttribute="baseline" id="s73-qP-b0K"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="57O-eX-W8h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2240" y="559"/>
         </scene>
     </scenes>
     <resources>

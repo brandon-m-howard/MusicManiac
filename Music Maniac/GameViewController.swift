@@ -16,14 +16,17 @@ class GameViewController: UIViewController {
 
         if let scene = GameScene(fileNamed: "GameScene") {
             let skView = self.view as! SKView
-            skView.showsFPS = true
-            skView.showsNodeCount = true
             skView.ignoresSiblingOrder = true
-			skView.showsPhysics = false
+			skView.showsPhysics = true
             scene.scaleMode = .AspectFill
             skView.presentScene(scene)
+			scene.controller = self
         }
     }
+
+	func toGameOver() {
+		self.performSegueWithIdentifier("ToGameOver", sender: self)
+	}
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

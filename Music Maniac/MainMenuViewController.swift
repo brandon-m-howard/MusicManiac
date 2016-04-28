@@ -11,4 +11,6 @@ import SpriteKit
 
 class MainMenuViewController: UIViewController {
 
+	@IBAction func unwindToMainMenu(segue: UIStoryboardSegue) { }
+
 }
