@@ -30,15 +30,20 @@ class GameScene: SKScene, BluetoothManagerDelegate, SKPhysicsContactDelegate {
 	var controller: GameViewController!
 	var healthRegeneration = 0
 	let nHealthRegeneration = 3
-	var levelId = ""
+	var levelPrefix = ""
+	var timeBetweenNotes = 8.0
 
 	override func didMoveToView(view: SKView) {
+		setupGame()
 		bluetooth = BluetoothManager()
 		bluetooth.setup()
 		bluetooth.delegate = self
+	}
 
+	func setupGame() {
 		self.physicsWorld.contactDelegate = self // For collision detection
-
+		score = 0
+		health = 0
 		setupAudio()
 		addGravityToView()
 		addBackground()
@@ -69,7 +74,7 @@ class GameScene: SKScene, BluetoothManagerDelegate, SKPhysicsContactDelegate {
 	}
 
 	func setupNoteAction() {
-		let waitAction = SKAction.waitForDuration(8)
+		let waitAction = SKAction.waitForDuration(timeBetweenNotes)
 		let noteAction = SKAction.runBlock({ self.addNote(); self.canPlayKey = true })
 		let sequenceAction = SKAction.sequence([noteAction, waitAction])
 		let repeatAction = SKAction.repeatActionForever(sequenceAction)
@@ -110,7 +115,7 @@ class GameScene: SKScene, BluetoothManagerDelegate, SKPhysicsContactDelegate {
 	}
 
 	func addGravityToView() {
-		self.physicsWorld.gravity = CGVectorMake(0.0, -1) //-4.9
+		self.physicsWorld.gravity = CGVectorMake(0.0, -1)
 	}
 
 	func addAlpacaToView() {
@@ -149,10 +154,6 @@ class GameScene: SKScene, BluetoothManagerDelegate, SKPhysicsContactDelegate {
 			block.physicsBody = SKPhysicsBody(rectangleOfSize: CGSize(width: block.size.width, height: block.size.height))
 			block.physicsBody?.dynamic = false
 			block.zPosition = 0
-//			block.physicsBody?.usesPreciseCollisionDetection = true
-//			block.physicsBody?.categoryBitMask = groundCategory
-//			block.physicsBody?.collisionBitMask = alpacaCategory
-//			block.physicsBody?.contactTestBitMask = alpacaCategory
 			self.addChild(block)
 		}
 	}
@@ -170,6 +171,10 @@ class GameScene: SKScene, BluetoothManagerDelegate, SKPhysicsContactDelegate {
 		}
 	}
 
+	@IBAction func unwindToGameScreen(segue: UIStoryboardSegue) {
+		setupGame()
+	}
+
 	func addScore() {
 		scoreLabel = SKLabelNode(fontNamed: "Cassius Garrod")
 		scoreLabel.fontSize = 40
@@ -183,7 +188,7 @@ class GameScene: SKScene, BluetoothManagerDelegate, SKPhysicsContactDelegate {
 
 	func addNote() {
 		let noteString = randomNoteString()
-		let note = SKSpriteNode(imageNamed: noteString + levelId)
+		let note = SKSpriteNode(imageNamed: noteString + levelPrefix)
 		note.xScale = 0.25
 		note.yScale = 0.25
 		note.position = CGPointMake(self.frame.width + note.size.width, 290)
@@ -210,8 +215,6 @@ class GameScene: SKScene, BluetoothManagerDelegate, SKPhysicsContactDelegate {
 
 	override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
 
-		for touch in touches {  }
-
 	}
 
 	func destroyNote() {
@@ -225,6 +228,7 @@ class GameScene: SKScene, BluetoothManagerDelegate, SKPhysicsContactDelegate {
 			self.removeAllActions()
 			self.removeAllChildren()
 			health = 3
+			controller.score = self.score
 			controller.toGameOver()
 			controller = nil
 		}
@@ -295,6 +299,7 @@ class GameScene: SKScene, BluetoothManagerDelegate, SKPhysicsContactDelegate {
 				jump()
 				playSound(key)
 				incrementScore()
+				timeBetweenNotes -= 0.1
 			} else if key == noteString && !canPlayKey {
 				// nothing?
 			} else {

@@ -13,6 +13,11 @@
             <string>CassiusGarrod</string>
             <string>CassiusGarrod</string>
             <string>CassiusGarrod</string>
+            <string>CassiusGarrod</string>
+            <string>CassiusGarrod</string>
+            <string>CassiusGarrod</string>
+            <string>CassiusGarrod</string>
+            <string>CassiusGarrod</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -41,7 +46,7 @@
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
                                 <state key="normal" title="Play"/>
                                 <connections>
-                                    <segue destination="499-42-d0g" kind="presentation" id="SCj-UC-Way"/>
+                                    <segue destination="geX-KM-Be3" kind="show" id="iav-Iq-DsE"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BgF-hf-48L">
@@ -176,6 +181,69 @@ Open the controller on your iPhone and connect to your AppleTV. Press the correc
             </objects>
             <point key="canvasLocation" x="-1888" y="1781"/>
         </scene>
+        <!--Level Select View Controller-->
+        <scene sceneID="REt-XF-HAR">
+            <objects>
+                <viewController id="geX-KM-Be3" customClass="LevelSelectViewController" customModule="Music_Maniac" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3qX-Xm-ILs"/>
+                        <viewControllerLayoutGuide type="bottom" id="6jY-L6-L3G"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7pk-Ug-3XI">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fst-w2-uex">
+                                <rect key="frame" x="501" y="478" width="919" height="124"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="124" id="3UD-bg-vqA"/>
+                                    <constraint firstAttribute="width" constant="919" id="uX3-tk-ga2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="CassiusGarrod" family="Cassius Garrod" pointSize="80"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="Easy"/>
+                                <connections>
+                                    <segue destination="499-42-d0g" kind="presentation" identifier="Easy" id="pYv-Iv-Rh9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kpU-FR-xbS">
+                                <rect key="frame" x="501" y="626" width="919" height="124"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="919" id="YM1-4a-F3W"/>
+                                    <constraint firstAttribute="height" constant="124" id="lRm-j8-EZm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="CassiusGarrod" family="Cassius Garrod" pointSize="80"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="Normal"/>
+                                <connections>
+                                    <segue destination="499-42-d0g" kind="presentation" identifier="Normal" id="pK3-t3-wrn"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Select Difficulty Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zgH-xZ-Ehm">
+                                <rect key="frame" x="342" y="331" width="1237" height="105"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="105" id="BAf-Kd-7wJ"/>
+                                    <constraint firstAttribute="width" constant="1237" id="klX-59-Q4b"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="CassiusGarrod" family="Cassius Garrod" pointSize="100"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="kpU-FR-xbS" firstAttribute="top" secondItem="Fst-w2-uex" secondAttribute="bottom" constant="24" id="BMo-H0-8Qz"/>
+                            <constraint firstItem="Fst-w2-uex" firstAttribute="centerY" secondItem="7pk-Ug-3XI" secondAttribute="centerY" id="ESh-zq-ivX"/>
+                            <constraint firstItem="Fst-w2-uex" firstAttribute="top" secondItem="zgH-xZ-Ehm" secondAttribute="bottom" constant="40" id="GaT-81-sgH"/>
+                            <constraint firstItem="Fst-w2-uex" firstAttribute="centerX" secondItem="7pk-Ug-3XI" secondAttribute="centerX" id="NQs-fi-Z6r"/>
+                            <constraint firstItem="zgH-xZ-Ehm" firstAttribute="centerX" secondItem="7pk-Ug-3XI" secondAttribute="centerX" id="Qbx-6N-9G8"/>
+                            <constraint firstItem="kpU-FR-xbS" firstAttribute="centerX" secondItem="7pk-Ug-3XI" secondAttribute="centerX" id="plo-Kg-mua"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Df-8e-VhB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137" y="-716"/>
+        </scene>
         <!--Game View Controller-->
         <scene sceneID="dEh-eV-dlg">
             <objects>
@@ -193,13 +261,14 @@ Open the controller on your iPhone and connect to your AppleTV. Press the correc
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dFW-Nd-Df7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="gvt-dz-psN" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="137" y="559"/>
         </scene>
-        <!--View Controller-->
+        <!--Game Over View Controller-->
         <scene sceneID="pmJ-M2-uab">
             <objects>
-                <viewController id="wnM-Kh-v9R" sceneMemberID="viewController">
+                <viewController id="wnM-Kh-v9R" customClass="GameOverViewController" customModule="Music_Maniac" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="on0-as-GKv"/>
                         <viewControllerLayoutGuide type="bottom" id="LQb-tg-zpf"/>
@@ -209,24 +278,37 @@ Open the controller on your iPhone and connect to your AppleTV. Press the correc
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3gu-MY-zkG">
-                                <rect key="frame" x="20" y="388" width="1880" height="114"/>
-                                <fontDescription key="fontDescription" name="CassiusGarrod" family="Cassius Garrod" pointSize="76"/>
+                                <rect key="frame" x="20" y="340" width="1880" height="114"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="114" id="JAp-C5-La8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="CassiusGarrod" family="Cassius Garrod" pointSize="100"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Xk-if-aMc">
-                                <rect key="frame" x="995" y="526" width="269" height="86"/>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Xk-if-aMc">
+                                <rect key="frame" x="565" y="636" width="790" height="124"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <bool key="isElement" value="NO"/>
+                                </accessibility>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="269" id="nAt-Wz-ISI"/>
+                                    <constraint firstAttribute="width" constant="790" id="aXK-GE-8np"/>
+                                    <constraint firstAttribute="height" constant="124" id="wOP-qU-Sy7"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="CassiusGarrod" family="Cassius Garrod" pointSize="80"/>
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
                                 <state key="normal" title="Restart"/>
+                                <connections>
+                                    <segue destination="gvt-dz-psN" kind="unwind" unwindAction="unwindToGame:" id="vRw-KO-nXi"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5nQ-G3-fXt">
-                                <rect key="frame" x="657" y="526" width="269" height="86"/>
+                                <rect key="frame" x="565" y="478" width="790" height="124"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="86" id="GDV-ND-DYo"/>
+                                    <constraint firstAttribute="width" constant="790" id="9xo-nu-sUp"/>
+                                    <constraint firstAttribute="height" constant="124" id="pWB-0r-Psi"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="CassiusGarrod" family="Cassius Garrod" pointSize="80"/>
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
                                 <state key="normal" title="Main Menu"/>
                                 <connections>
@@ -235,16 +317,19 @@ Open the controller on your iPhone and connect to your AppleTV. Press the correc
                             </button>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="3gu-MY-zkG" firstAttribute="top" secondItem="on0-as-GKv" secondAttribute="bottom" constant="388" id="4EJ-sH-C1e"/>
-                            <constraint firstItem="5Xk-if-aMc" firstAttribute="leading" secondItem="5nQ-G3-fXt" secondAttribute="trailing" constant="69" id="6wz-Id-avO"/>
-                            <constraint firstItem="5nQ-G3-fXt" firstAttribute="leading" secondItem="YCc-Xy-kXj" secondAttribute="leading" constant="657" id="BxO-5p-ema"/>
-                            <constraint firstItem="3gu-MY-zkG" firstAttribute="trailing" secondItem="YCc-Xy-kXj" secondAttribute="trailingMargin" id="FIG-qm-G6O"/>
-                            <constraint firstItem="5nQ-G3-fXt" firstAttribute="top" secondItem="3gu-MY-zkG" secondAttribute="bottom" constant="24" id="aju-v7-RzH"/>
-                            <constraint firstItem="3gu-MY-zkG" firstAttribute="leading" secondItem="YCc-Xy-kXj" secondAttribute="leadingMargin" id="bHW-AY-IpR"/>
-                            <constraint firstItem="LQb-tg-zpf" firstAttribute="top" secondItem="5nQ-G3-fXt" secondAttribute="bottom" constant="468" id="qPc-Rw-uvi"/>
-                            <constraint firstItem="5nQ-G3-fXt" firstAttribute="baseline" secondItem="5Xk-if-aMc" secondAttribute="baseline" id="s73-qP-b0K"/>
+                            <constraint firstItem="5nQ-G3-fXt" firstAttribute="centerX" secondItem="YCc-Xy-kXj" secondAttribute="centerX" id="Bvh-mv-mrv"/>
+                            <constraint firstItem="5Xk-if-aMc" firstAttribute="centerX" secondItem="YCc-Xy-kXj" secondAttribute="centerX" id="Me2-xT-AzU"/>
+                            <constraint firstItem="3gu-MY-zkG" firstAttribute="centerX" secondItem="YCc-Xy-kXj" secondAttribute="centerX" id="aOu-mo-0NQ"/>
+                            <constraint firstItem="5nQ-G3-fXt" firstAttribute="top" secondItem="3gu-MY-zkG" secondAttribute="bottom" constant="24" id="aft-J0-0fC"/>
+                            <constraint firstItem="3gu-MY-zkG" firstAttribute="leading" secondItem="YCc-Xy-kXj" secondAttribute="leadingMargin" id="pWm-Zo-rh3"/>
+                            <constraint firstItem="5Xk-if-aMc" firstAttribute="top" secondItem="5nQ-G3-fXt" secondAttribute="bottom" constant="34" id="x3I-ED-dm8"/>
+                            <constraint firstItem="3gu-MY-zkG" firstAttribute="trailing" secondItem="YCc-Xy-kXj" secondAttribute="trailingMargin" id="xgj-Gk-vfm"/>
+                            <constraint firstItem="5nQ-G3-fXt" firstAttribute="centerY" secondItem="YCc-Xy-kXj" secondAttribute="centerY" id="xnw-u9-Mnx"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="scoreLabel" destination="3gu-MY-zkG" id="7RY-4K-JIO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="57O-eX-W8h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -255,4 +340,7 @@ Open the controller on your iPhone and connect to your AppleTV. Press the correc
         <image name="Alpaca" width="635" height="1001"/>
         <image name="AlpacaLand" width="1024" height="681"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="pK3-t3-wrn"/>
+    </inferredMetricsTieBreakers>
 </document>
