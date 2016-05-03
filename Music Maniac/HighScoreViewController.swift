@@ -10,4 +10,16 @@ import UIKit
 
 class HighScoreViewController: UIViewController {
 
+	let userDefaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
+
+	@IBOutlet weak var easyLabel: UILabel!
+	@IBOutlet weak var normalLabel: UILabel!
+
+	override func viewWillAppear(animated: Bool) {
+		let easyScore = userDefaults.integerForKey("score 2")
+		let normalScore = userDefaults.integerForKey("score")
+		easyLabel.text = "Easy: \(easyScore)"
+		normalLabel.text = "Normal: \(normalScore)"
+	}
+
 }

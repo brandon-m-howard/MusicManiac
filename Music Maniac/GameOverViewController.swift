@@ -10,11 +10,22 @@ import UIKit
 
 class GameOverViewController: UIViewController {
 
+	var levelPrefix = ""
+	let userDefaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
+
 	@IBOutlet weak var scoreLabel: UILabel!
 	var score = 0
 
 	override func viewWillAppear(animated: Bool) {
-		scoreLabel.text = "Score:  \(score)"
+		let highScore = userDefaults.integerForKey("score" + levelPrefix)
+
+		if highScore >= score || score == 0 {
+			scoreLabel.text = "Score:  \(score)"
+		} else {
+			scoreLabel.text = "High Score! Score: \(score)"
+			userDefaults.setObject(score, forKey: "score" + levelPrefix)
+			userDefaults.synchronize()
+		}
 	}
 
 }

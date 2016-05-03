@@ -44,6 +44,7 @@ class GameViewController: UIViewController {
 		if segue.identifier == "ToGameOver" {
 			let dst = segue.destinationViewController as! GameOverViewController
 			dst.score = self.score
+			dst.levelPrefix = self.levelPrefix
 		}
 	}
 }
