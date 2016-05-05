@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" initialViewController="D3K-eK-Iif">
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" initialViewController="D3K-eK-Iif">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Cassius Garrod.otf">
-            <string>CassiusGarrod</string>
             <string>CassiusGarrod</string>
             <string>CassiusGarrod</string>
             <string>CassiusGarrod</string>
@@ -324,7 +323,6 @@ Open the controller on your iPhone and connect to your AppleTV. Press the correc
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dFW-Nd-Df7" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="gvt-dz-psN" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="137" y="559"/>
         </scene>
@@ -343,33 +341,8 @@ Open the controller on your iPhone and connect to your AppleTV. Press the correc
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AlpacaLand4" translatesAutoresizingMaskIntoConstraints="NO" id="XPB-YF-O9G">
                                 <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3gu-MY-zkG">
-                                <rect key="frame" x="20" y="198" width="1880" height="114"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="114" id="JAp-C5-La8"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="CassiusGarrod" family="Cassius Garrod" pointSize="100"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Xk-if-aMc">
-                                <rect key="frame" x="565" y="763" width="790" height="124"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <bool key="isElement" value="NO"/>
-                                </accessibility>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="790" id="aXK-GE-8np"/>
-                                    <constraint firstAttribute="height" constant="124" id="wOP-qU-Sy7"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="CassiusGarrod" family="Cassius Garrod" pointSize="80"/>
-                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
-                                <state key="normal" title="Restart"/>
-                                <connections>
-                                    <segue destination="gvt-dz-psN" kind="unwind" unwindAction="unwindToGame:" id="vRw-KO-nXi"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5nQ-G3-fXt">
-                                <rect key="frame" x="565" y="605" width="790" height="124"/>
+                                <rect key="frame" x="565" y="693" width="790" height="124"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="790" id="9xo-nu-sUp"/>
                                     <constraint firstAttribute="height" constant="124" id="pWB-0r-Psi"/>
@@ -381,20 +354,27 @@ Open the controller on your iPhone and connect to your AppleTV. Press the correc
                                     <segue destination="JZ0-K4-LJP" kind="unwind" unwindAction="unwindToMainMenu:" id="o4U-Zc-lih"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3gu-MY-zkG">
+                                <rect key="frame" x="20" y="159" width="1880" height="114"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="114" id="JAp-C5-La8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="CassiusGarrod" family="Cassius Garrod" pointSize="100"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <constraints>
                             <constraint firstItem="5nQ-G3-fXt" firstAttribute="centerX" secondItem="YCc-Xy-kXj" secondAttribute="centerX" id="Bvh-mv-mrv"/>
-                            <constraint firstItem="5Xk-if-aMc" firstAttribute="centerX" secondItem="YCc-Xy-kXj" secondAttribute="centerX" id="Me2-xT-AzU"/>
                             <constraint firstItem="3gu-MY-zkG" firstAttribute="centerX" secondItem="YCc-Xy-kXj" secondAttribute="centerX" id="aOu-mo-0NQ"/>
-                            <constraint firstItem="5nQ-G3-fXt" firstAttribute="top" secondItem="3gu-MY-zkG" secondAttribute="bottom" constant="293" id="aft-J0-0fC"/>
+                            <constraint firstItem="5nQ-G3-fXt" firstAttribute="top" secondItem="3gu-MY-zkG" secondAttribute="bottom" constant="420" id="aft-J0-0fC"/>
                             <constraint firstItem="XPB-YF-O9G" firstAttribute="top" secondItem="on0-as-GKv" secondAttribute="bottom" id="bMn-Z2-4cD"/>
                             <constraint firstItem="LQb-tg-zpf" firstAttribute="top" secondItem="XPB-YF-O9G" secondAttribute="bottom" id="bfp-Zz-8Bf"/>
                             <constraint firstAttribute="trailingMargin" secondItem="XPB-YF-O9G" secondAttribute="trailing" constant="-20" id="cJc-Y0-Isc"/>
                             <constraint firstItem="XPB-YF-O9G" firstAttribute="leading" secondItem="YCc-Xy-kXj" secondAttribute="leadingMargin" constant="-20" id="fbv-SK-cYC"/>
                             <constraint firstItem="3gu-MY-zkG" firstAttribute="leading" secondItem="YCc-Xy-kXj" secondAttribute="leadingMargin" id="pWm-Zo-rh3"/>
-                            <constraint firstItem="5Xk-if-aMc" firstAttribute="top" secondItem="5nQ-G3-fXt" secondAttribute="bottom" constant="34" id="x3I-ED-dm8"/>
                             <constraint firstItem="3gu-MY-zkG" firstAttribute="trailing" secondItem="YCc-Xy-kXj" secondAttribute="trailingMargin" id="xgj-Gk-vfm"/>
-                            <constraint firstItem="5nQ-G3-fXt" firstAttribute="centerY" secondItem="YCc-Xy-kXj" secondAttribute="centerY" constant="127" id="xnw-u9-Mnx"/>
+                            <constraint firstItem="5nQ-G3-fXt" firstAttribute="centerY" secondItem="YCc-Xy-kXj" secondAttribute="centerY" constant="215" id="xnw-u9-Mnx"/>
                         </constraints>
                     </view>
                     <connections>
