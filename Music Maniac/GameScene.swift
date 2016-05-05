@@ -55,6 +55,11 @@ class GameScene: SKScene, BluetoothManagerDelegate, SKPhysicsContactDelegate {
 	}
 
 	func setupAudio() {
+		
+		let backgroundMusic = SKAudioNode(fileNamed: "ChariotsOfFire")
+		backgroundMusic.autoplayLooped = true
+		self.addChild(backgroundMusic)
+
 		let c0 = SKAction.playSoundFileNamed("C0", waitForCompletion: false)
 		soundActions.append(c0)
 		let d = SKAction.playSoundFileNamed("D", waitForCompletion: false)
