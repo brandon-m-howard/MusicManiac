@@ -31,6 +31,8 @@
 		CABEA6101CCD5CA700009080 /* Definitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABEA60F1CCD5CA700009080 /* Definitions.swift */; };
 		CABEA6121CCD5D4000009080 /* BluetoothManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABEA6111CCD5D4000009080 /* BluetoothManager.swift */; };
 		CAF9047F1CDBB494007E8337 /* ChariotsOfFire.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CAF9047E1CDBB494007E8337 /* ChariotsOfFire.mp3 */; };
+		CAF904811CDBD316007E8337 /* Buzzer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CAF904801CDBD316007E8337 /* Buzzer.mp3 */; };
+		CAF904831CDBD3CE007E8337 /* explosion.wav in Resources */ = {isa = PBXBuildFile; fileRef = CAF904821CDBD3CE007E8337 /* explosion.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +62,8 @@
 		CABEA60F1CCD5CA700009080 /* Definitions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Definitions.swift; sourceTree = "<group>"; };
 		CABEA6111CCD5D4000009080 /* BluetoothManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BluetoothManager.swift; sourceTree = "<group>"; };
 		CAF9047E1CDBB494007E8337 /* ChariotsOfFire.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ChariotsOfFire.mp3; sourceTree = "<group>"; };
+		CAF904801CDBD316007E8337 /* Buzzer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Buzzer.mp3; sourceTree = "<group>"; };
+		CAF904821CDBD3CE007E8337 /* explosion.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = explosion.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +127,8 @@
 				CA187E601CCDA45A00479599 /* Game */,
 				CABEA5EE1CCD455700009080 /* Game.xcassets */,
 				CABEA5F31CCD455700009080 /* Assets.xcassets */,
+				CAF904821CDBD3CE007E8337 /* explosion.wav */,
+				CAF904801CDBD316007E8337 /* Buzzer.mp3 */,
 				CAF9047E1CDBB494007E8337 /* ChariotsOfFire.mp3 */,
 				CABEA5FF1CCD5C2000009080 /* A.mp3 */,
 				CABEA6001CCD5C2000009080 /* B.mp3 */,
@@ -206,10 +212,12 @@
 				CABEA5E91CCD455700009080 /* GameScene.sks in Resources */,
 				CABEA60A1CCD5C2000009080 /* C1.mp3 in Resources */,
 				CABEA6081CCD5C2000009080 /* B.mp3 in Resources */,
+				CAF904831CDBD3CE007E8337 /* explosion.wav in Resources */,
 				CABEA5F41CCD455700009080 /* Assets.xcassets in Resources */,
 				CABEA60D1CCD5C2000009080 /* F.mp3 in Resources */,
 				CABEA5EF1CCD455700009080 /* Game.xcassets in Resources */,
 				CABEA6091CCD5C2000009080 /* C0.mp3 in Resources */,
+				CAF904811CDBD316007E8337 /* Buzzer.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

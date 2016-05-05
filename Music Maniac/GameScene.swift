@@ -32,6 +32,8 @@ class GameScene: SKScene, BluetoothManagerDelegate, SKPhysicsContactDelegate {
 	let nHealthRegeneration = 3
 	var levelPrefix = ""
 	var timeBetweenNotes = 8.0
+	var buzzer: SKAction!
+	var explosion: SKAction!
 
 	override func didMoveToView(view: SKView) {
 		setupGame()
@@ -59,6 +61,9 @@ class GameScene: SKScene, BluetoothManagerDelegate, SKPhysicsContactDelegate {
 		let backgroundMusic = SKAudioNode(fileNamed: "ChariotsOfFire")
 		backgroundMusic.autoplayLooped = true
 		self.addChild(backgroundMusic)
+
+		buzzer = SKAction.playSoundFileNamed("Buzzer", waitForCompletion: false)
+		explosion = SKAction.playSoundFileNamed("explosion", waitForCompletion: false)
 
 		let c0 = SKAction.playSoundFileNamed("C0", waitForCompletion: false)
 		soundActions.append(c0)
@@ -292,6 +297,7 @@ class GameScene: SKScene, BluetoothManagerDelegate, SKPhysicsContactDelegate {
 			(contact.bodyB.node as! SKSpriteNode).removeFromParent()
 			print("COLLISION")
 			decrementHealth()
+			runAction(explosion)
 		}
 
 
@@ -311,6 +317,7 @@ class GameScene: SKScene, BluetoothManagerDelegate, SKPhysicsContactDelegate {
 				// nothing?
 			} else {
 				decrementHealth()
+				runAction(buzzer)
 			}
 		}
 	}
