@@ -33,6 +33,8 @@
 		CAF9047F1CDBB494007E8337 /* ChariotsOfFire.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CAF9047E1CDBB494007E8337 /* ChariotsOfFire.mp3 */; };
 		CAF904811CDBD316007E8337 /* Buzzer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CAF904801CDBD316007E8337 /* Buzzer.mp3 */; };
 		CAF904831CDBD3CE007E8337 /* explosion.wav in Resources */ = {isa = PBXBuildFile; fileRef = CAF904821CDBD3CE007E8337 /* explosion.wav */; };
+		CAF904861CDBD588007E8337 /* ExplosionEffect.sks in Resources */ = {isa = PBXBuildFile; fileRef = CAF904841CDBD588007E8337 /* ExplosionEffect.sks */; };
+		CAF904871CDBD588007E8337 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = CAF904851CDBD588007E8337 /* spark.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +66,8 @@
 		CAF9047E1CDBB494007E8337 /* ChariotsOfFire.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ChariotsOfFire.mp3; sourceTree = "<group>"; };
 		CAF904801CDBD316007E8337 /* Buzzer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Buzzer.mp3; sourceTree = "<group>"; };
 		CAF904821CDBD3CE007E8337 /* explosion.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = explosion.wav; sourceTree = "<group>"; };
+		CAF904841CDBD588007E8337 /* ExplosionEffect.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ExplosionEffect.sks; sourceTree = "<group>"; };
+		CAF904851CDBD588007E8337 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +88,8 @@
 				CABEA5EA1CCD455700009080 /* GameScene.swift */,
 				CABEA5EC1CCD455700009080 /* GameViewController.swift */,
 				CA816C841CD81FF6009A54FB /* GameOverViewController.swift */,
+				CAF904841CDBD588007E8337 /* ExplosionEffect.sks */,
+				CAF904851CDBD588007E8337 /* spark.png */,
 			);
 			name = Game;
 			sourceTree = "<group>";
@@ -203,6 +209,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CABEA60C1CCD5C2000009080 /* E.mp3 in Resources */,
+				CAF904871CDBD588007E8337 /* spark.png in Resources */,
 				CABEA6071CCD5C2000009080 /* A.mp3 in Resources */,
 				CABEA60E1CCD5C2000009080 /* G.mp3 in Resources */,
 				CABEA60B1CCD5C2000009080 /* D.mp3 in Resources */,
@@ -217,6 +224,7 @@
 				CABEA60D1CCD5C2000009080 /* F.mp3 in Resources */,
 				CABEA5EF1CCD455700009080 /* Game.xcassets in Resources */,
 				CABEA6091CCD5C2000009080 /* C0.mp3 in Resources */,
+				CAF904861CDBD588007E8337 /* ExplosionEffect.sks in Resources */,
 				CAF904811CDBD316007E8337 /* Buzzer.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

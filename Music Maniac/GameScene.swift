@@ -34,6 +34,7 @@ class GameScene: SKScene, BluetoothManagerDelegate, SKPhysicsContactDelegate {
 	var timeBetweenNotes = 8.0
 	var buzzer: SKAction!
 	var explosion: SKAction!
+	var explosionEmitterNode: SKEmitterNode!
 
 	override func didMoveToView(view: SKView) {
 		setupGame()
@@ -294,10 +295,23 @@ class GameScene: SKScene, BluetoothManagerDelegate, SKPhysicsContactDelegate {
 
 		if (contact.bodyA.categoryBitMask == alpacaCategory) &&
 			(contact.bodyB.categoryBitMask == noteCategory) {
-			(contact.bodyB.node as! SKSpriteNode).removeFromParent()
 			print("COLLISION")
-			decrementHealth()
+			let card = contact.bodyB.node as! SKSpriteNode
+
+			explosionEmitterNode = SKEmitterNode(fileNamed:"ExplosionEffect")
+			explosionEmitterNode!.position = CGPointMake(card.position.x,card.position.y)
+			explosionEmitterNode.particleColor = UIColor.orangeColor()
+
+			addChild(explosionEmitterNode!)
+
+			let fadeAction = SKAction.fadeOutWithDuration(1)
+			let removeAction = SKAction.runBlock({ self.explosionEmitterNode.removeFromParent() })
+			let sequenceAction = SKAction.sequence([fadeAction, removeAction])
+
+			card.removeFromParent()
 			runAction(explosion)
+			explosionEmitterNode.runAction(sequenceAction)
+			decrementHealth()
 		}
 
 
@@ -316,8 +330,8 @@ class GameScene: SKScene, BluetoothManagerDelegate, SKPhysicsContactDelegate {
 			} else if key == noteString && !canPlayKey {
 				// nothing?
 			} else {
-				decrementHealth()
 				runAction(buzzer)
+				decrementHealth()
 			}
 		}
 	}
