@@ -55,7 +55,7 @@ class GameScene: SKScene, BluetoothManagerDelegate, SKPhysicsContactDelegate {
 	}
 
 	func setupAudio() {
-		
+
 		let backgroundMusic = SKAudioNode(fileNamed: "ChariotsOfFire")
 		backgroundMusic.autoplayLooped = true
 		self.addChild(backgroundMusic)
@@ -219,7 +219,7 @@ class GameScene: SKScene, BluetoothManagerDelegate, SKPhysicsContactDelegate {
 	}
 
 	override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-
+//		jump()
 	}
 
 	func destroyNote() {
@@ -304,7 +304,9 @@ class GameScene: SKScene, BluetoothManagerDelegate, SKPhysicsContactDelegate {
 				jump()
 				playSound(key)
 				incrementScore()
-				timeBetweenNotes -= 0.1
+				if timeBetweenNotes > 5 {
+					timeBetweenNotes -= 0.1
+				}
 			} else if key == noteString && !canPlayKey {
 				// nothing?
 			} else {
